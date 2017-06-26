@@ -17,8 +17,8 @@ define(['jquery', 'app', 'jquery-ui', 'datepicker-cn'], function($, app) {
 					numberOfMonths: 2,
 					showButtonPanel: false,
 					onSelect: function(dateText, inst) {
-						queryCriteria.time = dateText.substr(4);
-						scope.$emit('loadData');//发送器
+						queryCriteria.time = dateText.substr(5);
+						scope.$emit('homeLoadData');//发送器
 					}
 				});
 

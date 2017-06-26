@@ -20,7 +20,7 @@ define(['jquery', 'app'], function($, app) {
 						
 						$(ele).find('input[type=radio]').click(function() {
 							queryCriteria.area = $(this).val();
-							scope.$emit('loadData');//发送器
+							scope.$emit('homeLoadData');//发送器
 						});
 					}, 0);
 

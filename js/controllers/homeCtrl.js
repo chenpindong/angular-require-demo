@@ -31,7 +31,11 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 
 		//加载数据
 		$scope.loadData = function() {
-			console.log(queryCriteria);
+			//console.log(queryCriteria);
+			$scope.params = {
+				params: queryCriteria
+			};
+			
 			loadOnline();
 			loadPay();
 			loadActive();
@@ -44,7 +48,7 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 		}
 		
 		//接收器
-		$scope.$on('loadData', function () {
+		$scope.$on('homeLoadData', function () {
            $scope.loadData();
         });
 		
@@ -105,7 +109,7 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 		
 		//加载在线数据图
 		function loadOnline() {
-			$http.get("js/data/online.json", queryCriteria).success(function(data) {
+			$http.get("js/data/online.json", $scope.params).success(function(data) {
 				if(!!data && data.code == 0 && !!data.data) {
 					var result = handleData(data.data, 'Areaspline');
 
@@ -121,7 +125,7 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 
 		//加载支付数据图
 		function loadPay() {
-			$http.get("js/data/pay.json", queryCriteria).success(function(data) {
+			$http.get("js/data/pay.json", $scope.params).success(function(data) {
 				if(!!data && data.code == 0 && !!data.data) {
 					var result = handleData(data.data);
 
@@ -137,7 +141,7 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 		
 		//加载在线数据图
 		function loadActive() {
-			$http.get("js/data/active.json", queryCriteria).success(function(data) {
+			$http.get("js/data/active.json", $scope.params).success(function(data) {
 				if(!!data && data.code == 0 && !!data.data) {
 					var result = handleData(data.data);
 
@@ -153,7 +157,7 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 
 		//加载新增数据图
 		function loadUserAdd() {
-			$http.get("js/data/userAdd.json", queryCriteria).success(function(data) {
+			$http.get("js/data/userAdd.json", $scope.params).success(function(data) {
 				if(!!data && data.code == 0 && !!data.data) {
 					var result = handleData(data.data);
 
@@ -169,7 +173,7 @@ define(['jquery', 'app', 'moment'], function($, app, moment) {
 
 		//加载总计数据
 		function loadTotalData() {
-			$http.get("js/data/totalData.json", queryCriteria).success(function(data) {
+			$http.get("js/data/totalData.json", $scope.params).success(function(data) {
 				if(!!data && data.code == 0 && !!data.data) {
 					var temp = data.data;
 					$scope.payModule.setData(temp.incomeTotal, temp.incomeEstimate, temp.incomeCompare, temp.incomePercent);
