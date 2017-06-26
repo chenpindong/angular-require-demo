@@ -1,0 +1,12 @@
+<div class="leftpanel">
+	<div class="logopanel">
+		<h1><span>[</span> ANALYSIS <span>]</span></h1></div>
+	<div class="leftpanelinner">
+		<h5 class="sidebartitle">Navigation</h5>
+		<ul class="nav nav-pills nav-stacked nav-bracket">
+			<li ng-repeat="item in navData" class="nav">
+				<a href="{{item.url}}"><i class="fa {{item.icon}}"></i> <span>{{item.name}}</span></a>
+			</li>
+		</ul>
+	</div>
+</div>

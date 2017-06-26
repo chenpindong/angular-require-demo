@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/png">
+		<title>{{headTitle}}</title>
+		<link rel="stylesheet" href="css/style.default.css" />
+	</head>
+
+	<body>
+		<preloader></preloader>
+		<section>
+			<leftpanel></leftpanel>
+			<div class="mainpanel">
+				<headerbar></headerbar>
+				<div ng-view class="{{pageClass}}"></div>
+			</div>
+		</section>
+
+		<script data-main="js/main" src="js/libs/require/require.js"></script>
+	</body>
+
+</html>

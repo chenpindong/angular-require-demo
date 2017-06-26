@@ -1,0 +1,6 @@
+[
+	{"id": "areaAll", "value": 10, "name":"ALL", "checked": true,"style":"rdio-default"},
+	{"id": "areaNA", "value": 11, "name":"NA", "checked": false,"style":"rdio-warning"},
+	{"id": "areaSG", "value": 21, "name":"SG", "checked": false,"style":"rdio-success"},
+	{"id": "areaEU", "value": 31, "name":"EU", "checked": false,"style":"rdio-danger"}
+]
